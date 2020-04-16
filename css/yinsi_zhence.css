@@ -1,0 +1,49 @@
+/*top_header*/
+.topheader3 {
+  height: 0.88rem;
+  display: flex;
+  box-sizing: border-box;
+  padding: 0 0.2rem;
+  width: 100%;
+  align-items: center;
+  width: 7.5rem;
+  background-color: #fff;
+}
+
+.topheader3 h2 {
+  display: table-cell;
+  width: 5.68rem;
+  text-align: center;
+  font-size: 0.3rem;
+  font-weight: bold;
+}
+
+.topheader3 i {
+  font-size: 0.34rem;
+  color: #666;
+  width: 0.71rem;
+}
+
+/**/
+.our_yinsi {
+  background-color: #fff;
+}
+
+.our_yinsi .yinsi {
+  border-top: 1px solid #eee;
+  background-color: #fff;
+  height: 1500px;
+  padding: 0.3rem 0.2rem;
+  box-sizing: border-box;
+}
+
+.our_yinsi .yinsi h3 {
+  margin-top: 0.3rem;
+  margin-bottom: 0.2rem;
+  font-weight: bold;
+}
+
+.our_yinsi .yinsi p {
+  color: #666;
+  line-height: 0.4rem;
+}

@@ -1,0 +1,359 @@
+@charset "UTF-8";
+/**
+ * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
+ * http://cssreset.com
+ */
+/* line 5, ../sass/reset.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, input, button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 0.26rem;
+  font-weight: normal;
+  vertical-align: baseline;
+  font-style: normal;
+  font-family: PingFangSC-Regular, sans-serif;
+}
+
+/* line 27, ../sass/reset.scss */
+body {
+  background-color: #efeff4;
+}
+
+/* HTML5 display-role reset for older browsers */
+/* line 29, ../sass/reset.scss */
+article, aside, details, figcaption, figure,
+footer, header, menu, nav, section {
+  display: block;
+}
+
+/* line 34, ../sass/reset.scss */
+body {
+  line-height: 1;
+}
+
+/* line 38, ../sass/reset.scss */
+blockquote, q {
+  quotes: none;
+}
+
+/* line 42, ../sass/reset.scss */
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: none;
+}
+
+/* line 47, ../sass/reset.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* custom */
+/* line 53, ../sass/reset.scss */
+a {
+  color: #7e8c8d;
+  text-decoration: none;
+}
+
+/* line 58, ../sass/reset.scss */
+li {
+  list-style: none;
+}
+
+/* line 62, ../sass/reset.scss */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+/* line 67, ../sass/reset.scss */
+::-webkit-scrollbar-track-piece {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* line 71, ../sass/reset.scss */
+::-webkit-scrollbar-thumb:vertical {
+  height: 5px;
+  background-color: rgba(125, 125, 125, 0.7);
+}
+
+/* line 76, ../sass/reset.scss */
+::-webkit-scrollbar-thumb:horizontal {
+  width: 5px;
+  background-color: rgba(125, 125, 125, 0.7);
+}
+
+/* line 81, ../sass/reset.scss */
+html, body {
+  width: 100%;
+}
+
+/* line 85, ../sass/reset.scss */
+body {
+  -webkit-text-size-adjust: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* line 89, ../sass/reset.scss */
+button {
+  background-color: transparent;
+  outline: none;
+}
+
+/* public_css */
+/* line 91, ../sass/reset.scss */
+#app {
+  max-width: 750px;
+  margin: 0 auto;
+  position: relative;
+  background-color: #efeff4;
+}
+
+/* line 92, ../sass/reset.scss */
+.main {
+  width: 7.1rem;
+  margin: 0 auto;
+}
+
+/* 引入字体 */
+@font-face {
+  font-family: 'pf_m';
+  src: url("../fonts/PingFangMedium.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'pingFangSC-Regular';
+  src: url("../fonts/PingFangRegular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'pingFangSC-Bold';
+  src: url("../fonts/PingFangBold.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'fz';
+  src: url("../fonts/fz.TTF");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'din';
+  src: url("../fonts/DIN-Regular.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+/* color*/
+/* 公用的css */
+/* footer_tab */
+/* line 127, ../sass/reset.scss */
+.footer_tab {
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+/* line 129, ../sass/reset.scss */
+.footer_tab ul {
+  display: flex;
+  width: 7.5rem;
+  margin: 0 auto;
+  height: 0.98rem;
+  background-color: #fff;
+}
+/* line 130, ../sass/reset.scss */
+.footer_tab ul li {
+  width: 25%;
+  text-align: center;
+  padding: 0.1rem 0;
+}
+/* line 131, ../sass/reset.scss */
+.footer_tab ul li a {
+  color: #666666;
+}
+/* line 132, ../sass/reset.scss */
+.footer_tab ul li a i {
+  font-size: 0.22rem;
+  padding-top: 0.1rem;
+  display: block;
+  width: 100%;
+  font-weight: bold;
+}
+/* line 133, ../sass/reset.scss */
+.footer_tab ul li a span {
+  display: block;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin: 0 auto;
+  background: url(../images/tab_1.png) 50% 0% no-repeat;
+}
+/* line 137, ../sass/reset.scss */
+.footer_tab ul li:nth-child(1) span {
+  background: url(../images/tab_1.png) 50% 0% no-repeat;
+  background-size: 100%;
+}
+/* line 138, ../sass/reset.scss */
+.footer_tab ul li:nth-child(2) span {
+  background: url(../images/tab_2.png) 50% 0% no-repeat;
+  background-size: 100%;
+}
+/* line 139, ../sass/reset.scss */
+.footer_tab ul li:nth-child(3) span {
+  background: url(../images/tab_3.png) 50% 0% no-repeat;
+  background-size: 100%;
+}
+/* line 140, ../sass/reset.scss */
+.footer_tab ul li:nth-child(4) span {
+  background: url(../images/tab_4.png) 50% 0% no-repeat;
+  background-size: 100%;
+}
+/* line 141, ../sass/reset.scss */
+.footer_tab ul li:nth-child(5) span {
+  background: url(../images/tab_5.png) 50% 0% no-repeat;
+  background-size: 100%;
+}
+/* line 144, ../sass/reset.scss */
+.footer_tab ul .act a i {
+  color: #DE1616;
+}
+/* line 145, ../sass/reset.scss */
+.footer_tab ul .act a span {
+  background-position: 50% 100%;
+}
+
+/*top_header  */
+/* line 151, ../sass/reset.scss */
+.top_header {
+  height: 0.88rem;
+  line-height: 0.88rem;
+  text-align: center;
+  font-size: 0.32rem;
+  font-weight: bold;
+}
+
+/* line 153, ../sass/reset.scss */
+.top_header2 {
+  height: 0.88rem;
+  line-height: 0.88rem;
+  text-align: center;
+  font-size: 0.32rem;
+  font-weight: bold;
+  position: relative;
+}
+
+/* line 155, ../sass/reset.scss */
+.top_header2 i {
+  font-weight: bold;
+}
+
+/* line 156, ../sass/reset.scss */
+.top_header2 em {
+  display: block;
+  height: 0.24rem;
+  width: 2em;
+  font-size: 0.24rem;
+  top: 50%;
+  margin-top: -0.12rem;
+  right: 0.25rem;
+  position: absolute;
+  line-height: 0.24rem;
+}
+
+/* line 160, ../sass/reset.scss */
+.checkbox {
+  position: relative;
+}
+
+/* line 161, ../sass/reset.scss */
+.checkbox input[type='checkbox'] {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0.3rem;
+  height: 0.3rem;
+  opacity: 0;
+}
+
+/* line 169, ../sass/reset.scss */
+.checkbox label {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 0.3rem;
+  width: 0.3rem;
+  display: block;
+}
+
+/* line 178, ../sass/reset.scss */
+.checkbox label:before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 0.3rem;
+  height: 0.3rem;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+/* line 192, ../sass/reset.scss */
+.checkbox label:after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 0.2rem;
+  height: 0.2rem;
+  border-radius: 50%;
+  background-color: blue;
+  background: #fff;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+}
+
+/* line 206, ../sass/reset.scss */
+.checkbox input[type='checkbox']:checked + label:before {
+  background: #fff;
+  border-color: #de1616;
+}
+
+/* line 210, ../sass/reset.scss */
+.checkbox input[type='checkbox']:checked + label:after {
+  background-color: #de1616;
+}
+
+/* line 214, ../sass/reset.scss */
+.text_long {
+  font-size: 0.26rem;
+  line-height: 0.40rem;
+  overflow: hidden;
+  color: #333;
+  font-weight: bold;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}

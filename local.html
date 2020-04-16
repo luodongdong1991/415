@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="btn">click me</div>
+  <script>
+      let storage =window.localStorage;
+      //localStorage;
+      if(!window.localStorage){
+        console.log('not support ');
+      }else{
+          for(let x= 1;x<10;x++){
+              storage[x] = x;
+          }
+      };
+      console.log(typeof storage);
+      let oBtn = document.querySelector('.btn')
+      oBtn.onclick=function(){
+          alert('成功清除缓存')
+      }
+  </script>  
+</body>
+</html>
