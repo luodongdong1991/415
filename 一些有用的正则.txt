@@ -1,0 +1,192 @@
+function checkIshanzi(s) {
+    //var patrn = /^[\u2E80-\u9FFF]$/; //Unicode编码中的汉字范围  /[^\x00-\x80]/
+    var patrn = /[^\x00-\x80]/;
+    if (!patrn.exec(s)) return false
+    return true
+}
+ 
+//校验登录名：只能输入4-20个以字母开头、可带数字、“_”、“.”的字串
+function checkIsRegisterUserName(s) {
+    var patrn = /^[a-zA-Z]{1}([a-zA-Z0-9]|[._]){3,19}$/;
+    if (!patrn.exec(s)) return false
+    return true
+}
+ 
+//校验用户姓名：只能输入4-30个以字母开头的字串
+function checkIsTrueName(s) {
+    var patrn = /^[a-zA-Z]{4,30}$/;
+    if (!patrn.exec(s)) return false
+    return true
+}
+ 
+//校验密码：只能输入6-20个字母、数字、下划线
+function checkIsPasswd(s) {
+    var patrn = /^(w){6,20}$/;
+    if (!patrn.exec(s)) return false
+    return true
+}
+ 
+//校验普通电话、传真号码：可以“+”开头，除数字外，可含有“-”
+function checkIsTel(s) {
+    var patrn = /^[+]{0,1}(d){1,4}[ ]?([-]?((d)|[ ]){1,12})+$/;
+    if (!patrn.exec(s)) return false
+    return true
+}
+ 
+//校验手机号码
+function checkIsMobil(s) {
+    var patrn = /^0?(13[0-9]|15[012356789]|18[0236789]|14[57])[0-9]{8}$/;
+    if (!patrn.exec(s)) return false
+    return true
+}
+ 
+//校验邮政编码
+function checkIsPostalCode(s) {
+    var patrn = /^[a-zA-Z0-9 ]{3,12}$/;
+    if (!patrn.exec(s)) return false
+    return true
+}
+ 
+//校验是否IP地址
+function checkIsIP(s) {
+    var patrn = /^[0-9.]{1,20}$/;
+    if (!patrn.exec(s)) return false
+    return true
+}
+ 
+//校验EMail
+function checkIsEMail(s) {
+    //var regex = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/;
+    //var reg =   /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/;
+    var patrn = /^([0-9A-Za-z\-_\.]+)@([0-9A-Za-z]+\.[A-Za-z]{2,3}(\.[A-Za-z]{2})?)$/g;
+    if (!patrn.exec(s)) return false
+    return true
+}
+ 
+//验证判断类型
+function check(axd,lbm,int) {
+    var s = $("#" + axd).val();
+    switch (int) {
+        case 0:
+            if (s == "") {
+                $("#textt").text(lbm + "不能为空");
+                $(".tip").fadeIn(200);
+                return false
+            }
+            break;
+        case 1:
+            if (!checkIsDigit(s)) {
+                $("#textt").text(lbm + "只能全由数字组成,请重新输入！");
+                $(".tip").fadeIn(200);
+                return false
+            }
+            break;
+        case 2:
+            if (checkIsDigit(s)) {
+                $("#textt").text(lbm + "不能全由数字组成,请重新输入！");
+                $(".tip").fadeIn(200);
+                return false
+            }
+            break;
+        case 3:
+            if (!checkIsRegisterUserName(s)) {
+                $("#textt").text(lbm + "只能输入4-20个以字母开头、可带数字、“_”、“.”的字串,请重新输入！");
+                $(".tip").fadeIn(200);
+                return false
+            }
+            break;
+        case 4:
+            if (!checkIsTrueName(s)) {
+                $("#textt").text(lbm + "只能输入4-30个以字母开头的字串,请重新输入！");
+                $(".tip").fadeIn(200);
+                return false
+            }
+            break;
+        case 5:
+            if (!checkIsPasswd(s)) {
+                $("#textt").text(lbm + "只能输入6-20个字母、数字、下划线,请重新输入！ ");
+                $(".tip").fadeIn(200);
+                return false
+            }
+            break;
+        case 6:
+            if (!checkIsTel(s)) {
+                $("#textt").text(lbm + "校验普通电话、传真号码：可以“+”开头，除数字外，可含有“-”,请重新输入！");
+                $(".tip").fadeIn(200);
+                return false
+            }
+            break;
+        case 7:
+            if (!checkIsMobil(s)) {
+                $("#textt").text(lbm + "不正确,请重新输入！");
+                $(".tip").fadeIn(200);
+                return false
+            }
+            break;
+        case 8:
+            if (!checkIsPostalCode(s)) {
+                $("#textt").text(lbm + "不正确,请重新输入！");
+                $(".tip").fadeIn(200);
+                return false
+            }
+            break;
+        case 9:
+            if (!checkIsIP(s)) {
+                $("#textt").text(lbm + "不正确,请重新输入！");
+                $(".tip").fadeIn(200);
+                return false
+            }
+            break;
+        case 10:
+            if (!checkIsEMail(s)) {
+                $("#textt").text(lbm + "不正确,请重新输入！");
+                $(".tip").fadeIn(200);
+                return false
+            }
+ 
+        case 11:
+            if (!checkIshanzi(s)) {
+                $("#textt").text(lbm + "只能全由汉字组成,请重新输入！");
+                $(".tip").fadeIn(200);
+                return false
+            }
+            break;
+        }
+    return true
+}
+function checkrid(axd, lbm, int) {
+    var s = $("input[name=" + axd + "]:checked").val();
+    switch (int) {
+        case 0:
+            if (s == "") {
+                $("#textt").text(lbm + "不能为空");
+                $(".tip").fadeIn(200);
+            }
+            break;
+    }
+}
+//验证判断
+function checked(asd) {
+    for (var i = 0; i < asd.length; i++) {
+        var axd = asd[i][0];
+        var lbm = asd[i][1];
+        var int = asd[i][2];
+        if (!check(axd, lbm, int)) {
+            return false;
+            break;
+        }
+    }
+    return true;
+}
+function ShowName(i) {
+    if (i == 1) {
+        $("#textt").text("修改成功");
+        $(".tip").fadeIn(200);
+    } else if (i == 0) {
+        $("#textt").text("添加成功");
+        $(".tip").fadeIn(200);
+    }if (i == 2) {
+        $("#textt").text("删除成功");
+        $(".tip").fadeIn(200);
+    }
+}
